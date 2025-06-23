@@ -1,22 +1,30 @@
-  //12 inch = 1 feet
+// 12 inch 1 feet
 
-  function inchTofeet(inch){
+function inchToFeet(inch) {
     const feet = inch / 12;
-    return feet; 
-  }
+    return feet;
+}
 
-    // 75
-  function inchTofeet2(inch){
-    const feetFraction = inch / 12 ; 
-    const feetNumber = parseInt(feetFraction); 
-    const incRemaining = inch % 12 ; 
-    const result = feetNumber + ' ft ' + incRemaining + ' inch. '; 
+// ignore this one
+function inchToFeet2(inch) {
+    const feetFraction = inch / 12;
+    const feetNumber = parseInt(feetFraction);
+    const inchRemaining = inch % 12;
+    const result = feetNumber + ' ft ' + inchRemaining + ' inch.'
     return result;
-  }
+}
 
-  const liliputHeight = inchTofeet(63); 
-  console.log(liliputHeight); 
+const shuvoHeight = inchToFeet(75);
+// console.log(shuvoHeight);
+const shuvoHeight2 = inchToFeet2(75);
+// console.log(shuvoHeight2)
 
-  const liliputHeight2 = inchTofeet2(63); 
-  console.log(liliputHeight2); 
+function mileToKilometer (mile){
+    const kilo = mile * 1.60934;
+    return kilo;
+}
 
+function kiloMeterToMiles(kilo){
+    const mile = kilo * 0.621371;
+    return mile;
+}
