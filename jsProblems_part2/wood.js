@@ -21,9 +21,3 @@ function woodQuantity(chairQuantity, tableQuantity, bedQuantity) {
 const wood = woodQuantity(1, 1, 4);
 console.log('wood needed', wood);
 
-/**
- * Shirt price --> 500
- * pant price --> 300
- * shoe price --> 900
- * 
-*/
