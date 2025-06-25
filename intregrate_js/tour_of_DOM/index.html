@@ -31,7 +31,19 @@
     </footer>
 <script src="js/dom.js"></script>
 <script>
-    console.log("adding js inside the html")
+    // const student ={
+    //     name: 'ABUL',
+    //     ID: 11,
+    //     study: function(time){
+    //         console.log(time, 'study kortesee'); 
+    //     }
+    // }
+
+    const liCollection = document.getElementsByTagName('li');
+    // console.log(liCollection);
+    for(const li of liCollection){
+        console.log(li.innerText)
+    }
 </script>    
 </body>
 </html>
