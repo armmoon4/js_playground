@@ -81,6 +81,28 @@
     for(const li of someLi){
         console.log(li.innerText);
     }
+
+    // Dynamic Style Example
+    fruitTitle.style.color = 'red';
+    fruitTitle.style.backgroundColor = 'yellow';
+    fruitTitle.style.padding = '10px';
+
+    // getAttribute example
+    const placesTitle = document.getElementById('places-title');
+    console.log(placesTitle.getAttribute('id'));
+
+    // setAttribute example
+    placesTitle.setAttribute('title', 'Places I love to visit');
+
+    // innerText example
+    console.log(fruitTitle.innerText);
+    fruitTitle.innerText = 'Updated Fruits List';
+
+    // innerHTML example
+    const section = document.querySelector('.fruits-container');
+    console.log(section.innerHTML);
+    section.innerHTML += '<p>This is a dynamically added paragraph about fruits!</p>';
+
 </script>    
 </body>
 </html>
