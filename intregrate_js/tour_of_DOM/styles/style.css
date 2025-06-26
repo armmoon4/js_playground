@@ -12,3 +12,11 @@ h1{
 .fruits-container li{
     color: tomato;
 }
+
+.fruits-container:hover {
+    background-color: red;
+}
+.yellow-bg{
+    /* background-color: yellowgreen !important; */
+    text-align: center;
+}
