@@ -43,3 +43,13 @@ mainContainer.appendChild(section)
 
 //set innerHTML directly
 
+const sectionDress = document.createElement('section');
+sectionDress.innerHTML = `
+<h1>My dress section</h1>
+<ul>
+    <li>lungi</li>
+    <li>shirt</li>
+    <li>tshirt</li>
+</ul>
+`
+mainContainer.appendChild(sectionDress);
