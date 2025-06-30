@@ -24,7 +24,6 @@
     }
 
     //option 4
-
     const pinkButton = document.getElementById('make-pink'); 
     pinkButton.addEventListener('click' , makePink);
 
@@ -44,3 +43,10 @@ makeGreenButton.addEventListener('click', function makeGreen(){
 document.getElementById('make-goldenrod').addEventListener('click' , function makeRod(){
     document.body.style.backgroundColor = 'goldenrod';
 })
+
+// fake docs
+
+document.getElementById('make-green').addEventListener('click', function makeGreen(){
+    document.body.style.backgroundColor = 'red';
+})
+
