@@ -8,10 +8,40 @@
 <body>
     <h1>Please add your comment</h1>
 
-    <div>
+    <div id="comment-container">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit numquam nulla tempora atque consequuntur, debitis quis quia obcaecati ipsum iusto optio maiores ab dolore consequatur, quisquam mollitia explicabo. Doloribus, quos?</p>
+
         <p>Voluptatum officiis a illum reprehenderit amet totam blanditiis nostrum pariatur aspernatur odio laudantium distinctio atque corporis consequuntur modi, accusantium dolorum voluptatibus consequatur magni esse. Blanditiis totam maiores quas sequi officiis.</p>
+
         <p>Atque provident, assumenda sequi eaque facilis suscipit cumque necessitatibus eligendi consectetur nam dolorum ex velit voluptatem ad sapiente eveniet laborum inventore, deleniti accusamus tempora. Quaerat sequi ratione esse assumenda praesentium!</p>
     </div>
+
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+        <br>
+        <button id="btn-post">Post</button>
+    </div>
+
+    <script>
+        //step-1: add event listner to the post button
+        document.getElementById('btn-post').addEventListener('click', function(){
+            //step-2: get the comment inside the text area
+            const commentBox = document.getElementById('new-comment');
+            const newcommentBox = commentBox.value; 
+
+            //step-3
+            //1.get the comment container
+            //2.create a new element
+            //3. set the text of the comment as innerText of the p tag
+            //4.add the p tag using appendchild
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = newcommentBox;
+            commentContainer.appendChild(p);
+
+            //step 4
+            commentBox.value = '';
+        })
+    </script>
 </body>
 </html>
