@@ -5,6 +5,7 @@ document.getElementById('button-login')
         event.preventDefault();
         console.log('login click');
         // step-3 get the phone number
-
+        const phoneNumber = document.getElementById('phone-number').value;
+        console.log(phoneNumber)
     })
 
