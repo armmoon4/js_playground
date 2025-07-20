@@ -21,11 +21,11 @@
                     <div class="card-body">
                         <fieldset class="space-y-4">
                             <label class="label">Mobile Number</label>
-                            <input type="numbers" class="input input-bordered w-full" placeholder="Your Phone Number" />
+                            <input type="numbers" class="input input-bordered w-full" placeholder="Your Phone Number" required/>
                             <label class="label">Pin</label>
-                            <input type="password" class="input input-bordered w-full" placeholder="Your Pin" />
+                            <input type="password" class="input input-bordered w-full" placeholder="Your Pin" autocomplete="off" required/>
                             <div><a class="link link-hover text-sm">Forgot pin?</a></div>
-                            <button class="btn btn-neutral w-full">Login</button>
+                            <button id="button-login" class="btn btn-neutral w-full">Login</button>
                         </fieldset>
                     </div>
                 </div>
@@ -34,6 +34,7 @@
             </div>
         </div>
     </main>
+    <script src="JS/login.js"></script>
 </body>
 
 </html>
