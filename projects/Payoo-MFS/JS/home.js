@@ -25,5 +25,22 @@ document.getElementById('btn-add-money').addEventListener('click', function(even
 
     // step 3 verify pin number
     // wrong way to validate pin number
-    if(pinInput === '112344')
+    if(pinInput === '1234'){
+        console.log('adding money to your account');
+        
+        // step-4 get the current balance
+        const accountBalance = document.getElementById('account-balance').innerText;
+        console.log(accountBalance);
+        // step-5 add addMoneyinput with balance
+        const addMoneyNumber = parseFloat(addMoneyinput);
+        const balanceNumber = parseFloat(accountBalance); 
+        const newBalance = addMoneyNumber + balanceNumber; 
+        console.log(newBalance);
+
+        // step-6 update the balance in UI
+        document.getElementById('account-balance').innerText = newBalance;
+
+    }else{
+        alert("Wrong pin number please try again !!")
+    }
 });
