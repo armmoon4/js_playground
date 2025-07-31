@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo MFS - RECAP</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+    <main class="flex justify-center">
+        <div class="mockup-phone bg-[#f8f8f8]">
+            <div class="mockup-phone-camera"></div>
+            <div class="mockup-phone-display text-black grid place-content-center">
+                <!-- avilable balance status -->
+                <div>
+                    <div class="stats shadow">
+                        <div class="stat">
+                            <div id="account-balance" class="stat-value">9400</div>
+                            <div class="stat-desc">Available balance</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+
+                <!-- add money from start -->
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <div class="card-body">
+                            <fieldset class="fieldset">
+                                <label class="label">Amount</label>
+                                <input id="add-money-input" type="email" class="input" placeholder="Enter Amount" />
+                                <label class="label">Pin</label>
+                                <input id="add-money-pin" type="password" class="input" placeholder="Enter Pin" />
+                                <button id="add-money-btn" class="btn btn-neutral mt-4">Add Money</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <!-- add money from end -->
+
+
+            </div>
+        </div>
+    </main>
+    <script src="JS/addMoney.js"></script>
+</body>
+
+</html>
