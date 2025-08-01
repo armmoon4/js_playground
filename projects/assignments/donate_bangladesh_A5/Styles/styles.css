@@ -37,6 +37,41 @@
     align-items: center;
 }
 
+/* secton button styles */
+.sectionbtn {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: #B4F461;
+    color: #111;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+
+}
+
+.sectionbtn2 {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 17, 17, 0.30);
+    color: rgba(17, 17, 17, 0.70);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+
+/* Responsive grid layout for header */
 /* Mobile: 1 column */
 @media screen and (max-width: 576px) {
     .header-style {
