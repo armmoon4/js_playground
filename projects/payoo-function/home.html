@@ -27,13 +27,14 @@
                 <div class="divider"></div>
                 <!-- feature starts -->
                 <div>
-                    <button class="btn btn-lg">Add Money</button>
-                    <button class="btn btn-lg">Cash Out</button>
+                    <button id="show-add-money-form" class="btn btn-lg">Add Money</button>
+                    <button id="show-cash-out-form" class="btn btn-lg">Cash Out</button>
+                    <button id="show-transaction-form" class="btn btn-lg">Transactions</button>
                 </div>
                 <!-- feature end -->
 
                 <!-- add money from start -->
-                <div class="hidden hero-content flex-col lg:flex-row-reverse">
+                <div id="add-money-form" class="hidden hero-content flex-col lg:flex-row-reverse">
                     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div class="card-body">
                             <fieldset class="fieldset">
@@ -50,7 +51,7 @@
 
 
                 <!-- cash out from start -->
-                <div class="hero-content flex-col lg:flex-row-reverse">
+                <div id="cash-out-form" class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div class="card-body">
                             <fieldset class="fieldset">
@@ -62,14 +63,25 @@
                             </fieldset>
                         </div>
                     </div>
+                </div>
                 <!-- cash out from end -->
 
+                <!-- transactions start -->
+                <div id="transaction-form" class="hidden">
+                    <h2 class="text-2xl text-center">Transactions History</h2>
+                    <div id="transaction-container" class="text-center">
+
+                    </div>
+                </div>
+                <!-- transactions end -->
+
+
             </div>
-        </div>
     </main>
     <script src="JS/utilities.js"></script>
     <script src="JS/addMoney.js"></script>
     <script src="JS/cashOut.js"></script>
+    <script src="JS/feature.js"></script>
 </body>
 
 </html>

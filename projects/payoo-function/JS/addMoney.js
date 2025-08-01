@@ -13,10 +13,25 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
     const addMoney = getInputFieldValueById('add-money-input');
     const pinNumber = getInputFieldValueById('add-money-pin');
 
+    if(isNaN(addMoney) || addMoney <= 0){
+        alert("Please enter a valid amount to add.");
+        return;
+    }
+    if(isNaN(pinNumber) || pinNumber <= 0){
+        alert("Please enter a valid PIN.");
+        return;
+    }
+
     if(pinNumber === 1234){
         const balance = getTextFIeldValueById('account-balance');
         const newBalance = balance + addMoney;
         document.getElementById('account-balance').innerText = newBalance;
+        // Here you can add code to update the transaction history
+        const p = document.createElement('p');
+        p.innerText = `Added $${addMoney} to account. New balance: $${newBalance}`;
+
+        // sould be a common function
+        document.getElementById('transaction-container').appendChild(p);
     }else{
         console.log("Incorrect PIN");
         alert("Incorrect PIN. Please try again.");
