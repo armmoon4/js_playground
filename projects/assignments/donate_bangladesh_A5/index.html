@@ -2,39 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donate Bangladesh</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="Styles/styles.css">
+
+    <!-- DaisyUI and Tailwind (no need to include Tailwind browser twice) -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="Styles/styles.css" />
 </head>
 
 <body class="lexend-font">
-    <header>
-        <!-- nav start -->
-        <nav class="navbarsytle">
+    <header class="header-style">
+        <!-- Column 1 -->
+        <div class="flex justify-center md:justify-start items-center">
             <button class="btn btn-primary">Blog</button>
-            <div class="flex items-center gap-2">
-                <img src="assets/logo.png" alt="">
-                <h1 class="donate-bd">Donate Bangladesh</h1>
-            </div>
+        </div>
 
-            <div class="flex items-center gap-2">
-                <img src="assets/coin.png" alt="">
-                <p class="account-bdt">5500 BDT</p>
-            </div>
-        </nav>
-        <!-- nav end -->
+        <!-- Column 2 -->
+        <div class="flex justify-center items-center gap-2">
+            <img src="assets/logo.png" alt="Logo" />
+            <h1 class="donate-bd">Donate Bangladesh</h1>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="flex justify-center md:justify-end items-center gap-2">
+            <img src="assets/coin.png" alt="Coin" />
+            <p class="account-bdt">5500 BDT</p>
+        </div>
     </header>
 
     <main>
-
+        <!-- Content -->
     </main>
 
     <footer>
-
+        <!-- Footer -->
     </footer>
 </body>
 
