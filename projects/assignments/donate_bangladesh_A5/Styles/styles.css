@@ -71,6 +71,16 @@
     cursor: pointer;
 }
 
+/* foooter styles */
+footer {
+    background: #F9F7F3;
+    padding: 54px 50px;
+    text-align: center;
+    font-size: 16px;
+    color: rgba(17, 17, 17, 0.70);
+}
+
+
 /* Responsive grid layout for header */
 /* Mobile: 1 column */
 @media screen and (max-width: 576px) {
