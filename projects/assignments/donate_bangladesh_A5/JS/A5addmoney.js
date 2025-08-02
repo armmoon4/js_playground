@@ -52,8 +52,6 @@ document.getElementById("close-modal-btn").addEventListener("click", function ()
     modal.classList.add("hidden");
 });
 
-
-
 // Reusable function to handle donation logic
 function handleDonation(buttonId, inputId, amountId, purpose, location) {
     document.getElementById(buttonId).addEventListener('click', function (event) {
@@ -76,6 +74,9 @@ function handleDonation(buttonId, inputId, amountId, purpose, location) {
 
         addToDonationHistory(addAmount, purpose, location);
         showSuccessModal();
+
+        // Clear the input field after successful donation
+        document.getElementById(inputId).value = '';
     });
 }
 
