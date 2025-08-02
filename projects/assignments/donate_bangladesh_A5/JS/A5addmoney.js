@@ -38,3 +38,23 @@ document.getElementById('add-money-btn-feni').addEventListener('click', function
         document.getElementById('avilable-amount').innerText = newAvilableAmount;
     }
 });
+
+
+// for quota donation
+document.getElementById('add-money-btn-quota').addEventListener('click', function(event) {
+    event.preventDefault();
+    const addAmountQuota = getInputFieldValueById('add-money-quota');
+    const currentAmountQuota = getTextFIeldValueById('amount-quota');
+    const avilableAmount = getTextFIeldValueById('avilable-amount');
+
+    // Validate the input amount
+    if (isNaN(addAmountQuota) || avilableAmount <= addAmountQuota || addAmountQuota <= 0) {
+        alert("Please enter a valid amount to add. Or you don't have enough balance.");
+        return;
+    } else {
+        const newAmountQuota = currentAmountQuota + addAmountQuota;
+        document.getElementById('amount-quota').innerText = newAmountQuota;
+        const newAvilableAmount = avilableAmount - addAmountQuota;
+        document.getElementById('avilable-amount').innerText = newAvilableAmount;
+    }
+});
