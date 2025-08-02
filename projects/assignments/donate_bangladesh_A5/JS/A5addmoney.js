@@ -1,60 +1,65 @@
 console.log("addmoney.js loaded");
 
-// for flood donation noakhali
-document.getElementById('add-money-btn-flood').addEventListener('click', function (event) {
-    event.preventDefault();
-    const addAmountFlood = getInputFieldValueById('add-money-flood');
-    const currentAmountFlood = getTextFIeldValueById('amount-flood');
-    const avilableAmount = getTextFIeldValueById('avilable-amount');
+// Utility Functions
+function getInputFieldValueById(id) {
+    return parseFloat(document.getElementById(id).value);
+}
 
+function getTextFIeldValueById(id) {
+    return parseFloat(document.getElementById(id).innerText);
+}
 
-    // Validate the input amount
-    if (isNaN(addAmountFlood) || avilableAmount <= addAmountFlood || addAmountFlood <= 0) {
-        alert("Please enter a valid amount to add. Or you don't have enough balance.");
-        return;
-    } else {
-        const newAmountFlood = currentAmountFlood + addAmountFlood;
-        document.getElementById('amount-flood').innerText = newAmountFlood;
-        const newAvilableAmount = avilableAmount - addAmountFlood;
-        document.getElementById('avilable-amount').innerText = newAvilableAmount;
-    }
-});
+function updateTextFieldById(id, value) {
+    document.getElementById(id).innerText = value;
+}
 
-// for feni donation
-document.getElementById('add-money-btn-feni').addEventListener('click', function( event) {
-    event.preventDefault();
-    const addAmountFeni = getInputFieldValueById('add-money-feni');
-    const currentAmountFeni = getTextFIeldValueById('amount-feni');
-    const avilableAmount = getTextFIeldValueById('avilable-amount');
+// Creates a donation card and appends it to the history section
+function addToDonationHistory(amount, purpose, location) {
+    const date = new Date().toString();
+    const container = document.getElementById("history-container");
 
-    // Validate the input amount
-    if (isNaN(addAmountFeni) || avilableAmount <= addAmountFeni || addAmountFeni <= 0) {
-        alert("Please enter a valid amount to add. Or you don't have enough balance.");
-        return;
-    } else {
-        const newAmountFeni = currentAmountFeni + addAmountFeni;
-        document.getElementById('amount-feni').innerText = newAmountFeni;
-        const newAvilableAmount = avilableAmount - addAmountFeni;
-        document.getElementById('avilable-amount').innerText = newAvilableAmount;
-    }
-});
+    const card = document.createElement("div");
+    card.className = "p-6 rounded-xl border border-gray-200 bg-white shadow-sm";
 
+    const title = document.createElement("p");
+    title.className = "font-bold text-lg text-gray-800";
+    title.innerText = `${amount} Taka is Donated for ${purpose} at ${location}`;
 
-// for quota donation
-document.getElementById('add-money-btn-quota').addEventListener('click', function(event) {
-    event.preventDefault();
-    const addAmountQuota = getInputFieldValueById('add-money-quota');
-    const currentAmountQuota = getTextFIeldValueById('amount-quota');
-    const avilableAmount = getTextFIeldValueById('avilable-amount');
+    const dateLine = document.createElement("p");
+    dateLine.className = "text-sm text-gray-600 mt-2";
+    dateLine.innerText = `Date : ${date}`;
 
-    // Validate the input amount
-    if (isNaN(addAmountQuota) || avilableAmount <= addAmountQuota || addAmountQuota <= 0) {
-        alert("Please enter a valid amount to add. Or you don't have enough balance.");
-        return;
-    } else {
-        const newAmountQuota = currentAmountQuota + addAmountQuota;
-        document.getElementById('amount-quota').innerText = newAmountQuota;
-        const newAvilableAmount = avilableAmount - addAmountQuota;
-        document.getElementById('avilable-amount').innerText = newAvilableAmount;
-    }
-});
+    card.appendChild(title);
+    card.appendChild(dateLine);
+    container.appendChild(card);
+}
+
+// Reusable function to handle donation logic
+function handleDonation(buttonId, inputId, amountId, purpose, location) {
+    document.getElementById(buttonId).addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const addAmount = getInputFieldValueById(inputId);
+        const currentAmount = getTextFIeldValueById(amountId);
+        const availableAmount = getTextFIeldValueById('avilable-amount');
+
+        if (isNaN(addAmount) || addAmount <= 0 || availableAmount < addAmount) {
+            alert("Please enter a valid amount or check your available balance.");
+            return;
+        }
+
+        const newAmount = currentAmount + addAmount;
+        const newAvailable = availableAmount - addAmount;
+
+        updateTextFieldById(amountId, newAmount);
+        updateTextFieldById('avilable-amount', newAvailable);
+
+        // Log to history
+        addToDonationHistory(addAmount, purpose, location);
+    });
+}
+
+// Attach handlers
+handleDonation('add-money-btn-flood', 'add-money-flood', 'amount-flood', 'Flood Relief', 'Noakhali');
+handleDonation('add-money-btn-feni', 'add-money-feni', 'amount-feni', 'famine-2024', 'Feni');
+handleDonation('add-money-btn-quota', 'add-money-quota', 'amount-quota', 'Aid for Injured in the Quota Movement', 'Bangladesh');

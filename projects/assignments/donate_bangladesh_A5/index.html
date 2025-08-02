@@ -33,13 +33,13 @@
     <main>
         <!-- button section start -->
         <section class="flex justify-center items-center gap-5 mt-8">
-            <button class="btn sectionbtn">Donation</button>
-            <button class="btn sectionbtn2">History</button>
+            <button id="show-donation-section" class="btn sectionbtn">Donation</button>
+            <button id="show-history-section" class="btn sectionbtn2">History</button>
         </section>
         <!-- button section end -->
 
         <!-- card section start -->
-        <section class="p-8 flex flex-col gap-8">
+        <section id="donation-secton" class="p-8 flex flex-col gap-8">
 
             <!-- Donate for Flood at Noakhali, Bangladesh  card start -->
             <div
@@ -65,8 +65,8 @@
                     </p>
                     <input id="add-money-flood" type="number" placeholder="Write Donation Amount"
                         class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-lime-400" />
-                    <button
-                        id="add-money-btn-flood" class="btn w-full bg-lime-400 text-white py-2 rounded-md font-semibold hover:bg-lime-500 transition">
+                    <button id="add-money-btn-flood"
+                        class="btn w-full bg-lime-400 text-white py-2 rounded-md font-semibold hover:bg-lime-500 transition">
                         Donate Now
                     </button>
                 </div>
@@ -143,14 +143,26 @@
         </section>
         <!-- card section end -->
 
+        <!-- history section start -->
+        <section id="history-section" class="hidden">
+            <div class="p-8 flex flex-col gap-8 items-center">
+                <!-- Container with 32px (gap-8) vertical spacing -->
+                <div id="history-container" class="flex flex-col gap-8 w-full max-w-4xl">
+                    <!-- Donation items will be added here via JS -->
+                </div>
+            </div>
+        </section>
+        <!-- history section end -->
+
 
     </main>
 
     <footer>
-       
+
     </footer>
     <script src="JS/A5utilitie.js"></script>
     <script src="JS/A5addmoney.js"></script>
+    <script src="JS/feature.js"></script>
 </body>
 
 </html>
