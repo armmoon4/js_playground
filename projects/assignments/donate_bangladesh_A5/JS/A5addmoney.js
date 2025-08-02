@@ -34,6 +34,26 @@ function addToDonationHistory(amount, purpose, location) {
     container.appendChild(card);
 }
 
+function showSuccessModal() {
+    const modal = document.getElementById("success-modal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex"); // show + center
+
+    // Automatically hide after 5 seconds
+    setTimeout(() => {
+        modal.classList.remove("flex");
+        modal.classList.add("hidden");
+    }, 5000);
+}
+
+document.getElementById("close-modal-btn").addEventListener("click", function () {
+    const modal = document.getElementById("success-modal");
+    modal.classList.remove("flex");
+    modal.classList.add("hidden");
+});
+
+
+
 // Reusable function to handle donation logic
 function handleDonation(buttonId, inputId, amountId, purpose, location) {
     document.getElementById(buttonId).addEventListener('click', function (event) {
@@ -54,8 +74,8 @@ function handleDonation(buttonId, inputId, amountId, purpose, location) {
         updateTextFieldById(amountId, newAmount);
         updateTextFieldById('avilable-amount', newAvailable);
 
-        // Log to history
         addToDonationHistory(addAmount, purpose, location);
+        showSuccessModal();
     });
 }
 

@@ -6,7 +6,7 @@ document.getElementById('show-history-section').addEventListener('click', functi
     showSectionbyID('history-section');
 })
 
-
+// buttons to toggle between donation and history sections
 const donationBtn = document.getElementById("show-donation-section");
 const historyBtn = document.getElementById("show-history-section");
 
