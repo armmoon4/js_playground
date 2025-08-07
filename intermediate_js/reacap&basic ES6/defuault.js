@@ -1,15 +1,10 @@
-// Using let and const in functions
-function exampleFunction() {
-    let localVar = 'I am local'; // localVar is only accessible within this function
-    const localConst = 'I am also local'; // localConst is also only accessible within this function
-    console.log(localVar); // Output: I am local
-    console.log(localConst); // Output: I am also local
+// defult if value is not provided
+// Default parameters in ES6    
+function add(num1, num2 = 11) {
+    const result = num1 + num2;
+    console.log(`The sum of ${num1} and ${num2} is ${result}`);
+    return result;  
 }
-exampleFunction();  
-// console.log(localVar); // This will throw an error because localVar is not defined outside the function
-// console.log(localConst); // This will throw an error because localConst is not defined outside the function  
-// Using var in functions
-function anotherFunction() {
-    var functionVar = 'I am a function variable'; // functionVar is accessible within this function
-    console.log(functionVar); // Output: I am a function variable
-}   
+
+// const sum = add(5, 10);
+const sum = add(5);
