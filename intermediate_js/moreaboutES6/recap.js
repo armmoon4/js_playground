@@ -8,6 +8,10 @@ console.log(Object.keys(person));
 console.log(Object.values(person));
 console.log(Object.entries(person));
 
+delete person.age;
+console.log(person);    
+
+
 
 // object destructuring
 const {name, age} = person;
