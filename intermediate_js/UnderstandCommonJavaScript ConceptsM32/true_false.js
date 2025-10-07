@@ -1,4 +1,4 @@
-const name = "MOON";
+const name = "HEROALAM";
 
 if (name) {
     console.log("true");

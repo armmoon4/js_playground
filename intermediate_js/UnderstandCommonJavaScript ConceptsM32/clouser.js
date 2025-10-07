@@ -1,12 +1,24 @@
 function sum() {
     let counter = 0;
-    const updatecounter = function() {
-        counter += 1;
+    return function() {
+        counter ++;
         console.log(counter);
     }
-    updatecounter();
 }
 
-sum();
-sum();
-sum();
+const result = sum();
+result();
+result();
+result();
+result();
+
+const result2 = sum();
+result2();
+result2();
+result2();
+result2();
+
+
+
+
+
