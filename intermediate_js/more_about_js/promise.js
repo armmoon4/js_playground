@@ -33,3 +33,4 @@ Promise.all(urls.map(url => {
     .then(res => res)
     .then(data => console.log(data))
     .catch(err => console.error('Error fetching data:', err));
+    
