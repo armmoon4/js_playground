@@ -14,4 +14,5 @@ const person = {
 }
 
 // console.log(person.details.father.name); 
+
 console.log(person["name"])

@@ -45,3 +45,4 @@ const newProduct = product.map((item) => {
 })
 console.log(newProduct);    
 
+// return new array with same length
