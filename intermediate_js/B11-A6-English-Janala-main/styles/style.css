@@ -1,0 +1,87 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+.liber_font {
+    font-family: "Libertinus Serif", serif;
+    font-style: normal;
+}
+
+.font_bangla {
+    font-family: "Hind Siliguri", sans-serif;
+    font-style: normal;
+}
+
+.font_roboto {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* fqa styels */
+.faq-section {
+    max-width: auto;
+    padding: 20px;
+    font-family: "Segoe UI", sans-serif;
+    
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    background-color: #F8F8F8;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.faq-question .icon {
+    transition: transform 0.3s ease;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 0;
+}
+
+.faq-answer p {
+    margin: 10px 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    /* enough for content */
+    padding: 10px 0;
+}
+
+.faq-item.active .faq-question .icon {
+    transform: rotate(180deg);
+    content: "–";
+}
