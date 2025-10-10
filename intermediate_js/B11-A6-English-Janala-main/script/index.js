@@ -1,4 +1,53 @@
+// hide all section first 
+document.getElementById("header").style.display = "none";
+document.getElementById("learn_section").style.display = "none";
+document.getElementById("faq_section").style.display = "none";
 
+// login and banner related
+function handleSubmit(event) {
+    event.preventDefault();
+    const form = document.forms["form"];
+    const name = form.name.value;
+    const password = form.password.value;
+    // name & password check :
+    if (!name || !isNaN(name)) {
+        alert("Please enter a valid name");
+        return;
+    }
+    if (password === "123456") {
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Logged in successfully",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        console.log("sucess");
+        document.getElementById("header").style.display = "block";
+        document.getElementById("learn_section").style.display = "block";
+        document.getElementById("faq_section").style.display = "block";
+        document.getElementById("banner_section").style.display = "none";
+    }
+    else {
+        alert("Enter the correct code");
+    }
+    form.reset();
+};
+
+// logout function : 
+function logOut() {
+    document.getElementById("banner_section").style.display = "block";
+    document.getElementById("header").style.display = "none";
+    document.getElementById("learn_section").style.display = "none";
+    document.getElementById("faq_section").style.display = "none";
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Logged out successfully",
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
 
 // lessons button APi fetch 
 const loadLessonsButton = () => {

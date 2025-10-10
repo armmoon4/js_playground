@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>English Janala</title>
 </head>
 
@@ -48,39 +49,42 @@
 
     </header>
     <main>
-        <!-- Banner -->
+        <!-- Banner Section -->
         <section id="banner_section" class="min-h-screen flex items-center justify-center bg-white px-6 py-10">
             <div class="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-10">
 
-                <!-- Banner Left -->
+                <!-- Banner Left Content  -->
                 <div class="">
                     <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
                         <span class="text-blue-500">English</span> is Easy!!
                     </h1>
-                    <p class="mt-4 text-gray-700 leading-relaxed text-base font_bangla font-semibold">
-                        আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন । আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে
-                        চান,আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য একটি
-                        Level এ ।
+                    <p class="mt-4 text-gray-700 leading-relaxed text-base font_bangla">
+                        আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন । আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান,
+                        আমাদের
+                        <span class="text-orange-600 font-semibold">Interactive</span>
+                        <span class="text-green-600 font-semibold">Lessons</span>
+                        আপনাকে নিয়ে যাবে অন্য একটি
+                        <span class="text-blue-500 font-semibold">Level</span> এ ।
                     </p>
 
                     <!-- Form Section -->
                     <form name="form" class="mt-6 space-y-4 max-w-sm">
                         <input
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#422ad5]"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
                             type="text" name="name" placeholder="Enter Your Name">
 
                         <input
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#422ad5]"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
                             type="number" name="password" placeholder="Enter Code (ex: 123456)">
 
-                        <button type="submit"
-                            class="px-4 py-2 bg-[#422ad5] border-2 border-[#422ad5] text-white hover:text-[#422ad5] hover:bg-white hover:border-2 hover:border-[#422ad5] rounded-md font-medium cursor-pointer">
+                        <button onclick="handleSubmit(event)" type="submit"
+                            class="px-4 py-2 bg-blue-500 border-2 border-blue-500 text-white hover:text-blue-500 hover:bg-white hover:border-2 hover:border-blue-500 rounded-md font-medium hover:cursor-pointer">
                             Get Started!
                         </button>
                     </form>
                 </div>
 
-                <!-- Banner Image  -->
+                <!-- Banner Right Image  -->
                 <div class="flex justify-center items-center relative">
                     <div class="p-5">
                         <img src="./assets/hero-student.png" alt="Student Image">
@@ -89,6 +93,7 @@
 
             </div>
         </section>
+
 
         <section id="learn_section" class="min-h-screen bg-white px-6 py-10">
             <h2 class="text-4xl font-bold text-center p-5 text-gray-700">
@@ -132,7 +137,7 @@
 
         <!-- frequntly question start -->
 
-        <section class="faq-section">
+        <section id="faq_section">
             <h2 class="faq-title font-bold "><span class="text-blue-500">Frequently</span> Asked Questions</h2>
             <div class="faq-container">
                 <div class="faq-item">
