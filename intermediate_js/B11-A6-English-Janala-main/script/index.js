@@ -34,7 +34,7 @@ function handleSubmit(event) {
     form.reset();
 };
 
-// logout function : 
+// logout function 
 function logOut() {
     document.getElementById("banner_section").style.display = "block";
     document.getElementById("header").style.display = "none";
@@ -48,6 +48,14 @@ function logOut() {
         timer: 1500
     });
 }
+
+// scrolling in faq seiction
+function scrollToSection(id) {
+    const target = document.getElementById(id);
+    target.scrollIntoView({ behavior: "smooth" });
+};
+
+
 
 // lessons button APi fetch 
 const loadLessonsButton = () => {
