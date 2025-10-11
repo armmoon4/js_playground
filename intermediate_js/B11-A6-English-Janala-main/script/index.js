@@ -77,23 +77,58 @@ const loadcategoriesLesson =(id)=> {
 }         
 // upper lines due lets do it 
 
+// Object { id: 5, level: 1, word: "Eager", meaning: "আগ্রহী", pronunciation: "ইগার" }
+// ​
+// id: 5
+// ​
+// level: 1
+// ​
+// meaning: "আগ্রহী"
+// ​
+// pronunciation: "ইগার"
+// ​
+// word: "Eager"
+// ​
+
+
+
 const displayWord = (words)=> {
     
     const wordContainer = document.getElementById("word_container");
+
     wordContainer.innerHTML = ""
+
+    if(words.length == 0){
+        wordContainer.innerHTML = `
+             <div id="no_words" class="bg-gray-200  p-16 text-center mt-8 mb-8 rounded-lg flex flex-col items-center col-span-full">
+             <img src="./assets/alert-error.png" alt="Student Image">
+            <p class="text-sm font_bangla mt-2 text-gray-700">
+                    এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
+                    </p>
+                <h3 class="text-3xl font_bangla font-bold mt-2 text-gray-700">নেক্সট Lesson এ যান
+                    </h3>
+                </div>
+        
+        `;
+    
+    }else{
+        document.getElementById("no_words").style.display = "none";
+    }
+
+
     words.forEach(data =>{
         console.log(data);
     const wordCard = document.createElement("div"); 
     wordCard.innerHTML = `
     <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md hover:bg-blue-200 object-cover">
             <h1 class="text-xl font-bold text-center text-gray-900 mb-4">
-                ${data.meaning}
+                ${data.word}
             </h1>
             <p class="text-center text-gray-600 text-lg mb-6">
                 Meaning /Pronunciation
             </p>
             <p class="text-center text-sm font-semibold text-gray-800 mb-12">
-                "আগ্রহী / ইগার"
+                "${data.meaning} / ${data.pronunciation}"
             </p>
             <div class="flex justify-between items-center">
                 <!-- Info Icon -->
@@ -137,6 +172,7 @@ const displayLessonsButton = (lessons) => {
 };
 
 loadLessonsButton();
+
 
 // fqa questions fun
 
