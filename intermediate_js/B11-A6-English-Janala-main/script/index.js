@@ -185,7 +185,7 @@ const displayWord = (words)=> {
         console.log(data);
     const wordCard = document.createElement("div"); 
     wordCard.innerHTML = `
-    <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md hover:bg-blue-200 object-cover">
+    <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md hover:bg-blue-50 object-cover">
             <h1 class="text-xl font-bold text-center text-gray-900 mb-4">
                 ${data.word}
             </h1>
