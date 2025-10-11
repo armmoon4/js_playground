@@ -90,6 +90,71 @@ const loadcategoriesLesson =(id)=> {
 // word: "Eager"
 // ​
 
+const loadwordDetails= (wordId)=> {
+    console.log(wordId)
+    const url = `https://openapi.programming-hero.com/api/word/${wordId}`;
+    fetch(url)
+    .then((res)=> res.json())
+    .then(data=> displayWordDetails(data.data));
+}
+
+// {
+//   "word": "Eager",
+//   "meaning": "আগ্রহী",
+//   "pronunciation": "ইগার",
+//   "level": 1,
+//   "sentence": "The kids were eager to open their gifts.",
+//   "points": 1,
+//   "partsOfSpeech": "adjective",
+//   "synonyms": [
+//     "enthusiastic",
+//     "excited",
+//     "keen"
+//   ],
+//   "id": 5
+// }
+
+const displayWordDetails = (word)=> {
+    console.log(word);
+    document.getElementById("word_details").showModal();
+    const detailsContainer = document.getElementById("details_container");
+    detailsContainer.innerHTML = `
+    <div class="max-w-2xl bg-white rounded-lg shadow-sm p-8">
+        <!-- Title -->
+        <h1 class="text-4xl font-bold text-gray-900 mb-8">
+            ${word.word} (${word.meaning})
+        </h1>
+
+        <!-- Meaning Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-3">Meaning</h2>
+            <p class="text-gray-800 text-lg">${word.meaning}</p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-3">Example</h2>
+            <p class="text-gray-700 text-base mb-4">
+                ${word.sentence}
+            </p>
+            <p class="text-gray-800 text-base">সমার্থক শব্দ গুলো</p>
+        </div>
+
+        <!-- Synonyms -->
+        <div class="flex flex-wrap gap-3">
+            <span class="px-6 py-2 bg-blue-50 text-gray-700 rounded-lg text-sm">
+                ${word.synonyms[0]}
+            </span>
+            <span class="px-6 py-2 bg-blue-50 text-gray-700 rounded-lg text-sm">
+                ${word.synonyms[1]}
+            </span>
+            <span class="px-6 py-2 bg-blue-50 text-gray-700 rounded-lg text-sm">
+                ${word.synonyms[2]}
+            </span>
+        </div>
+    </div>
+    `;
+}
 
 
 const displayWord = (words)=> {
@@ -132,7 +197,7 @@ const displayWord = (words)=> {
             </p>
             <div class="flex justify-between items-center">
                 <!-- Info Icon -->
-                <button class="bg-blue-100 hover:bg-blue-200 rounded-full p-3 transition-colors duration-200 hover:cursor-pointer">
+                <button onclick = "loadwordDetails(${data.id})" class="bg-blue-100 hover:bg-blue-200 rounded-full p-3 transition-colors duration-200 hover:cursor-pointer">
                     <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd"
                             d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
